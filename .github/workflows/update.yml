@@ -2,9 +2,8 @@ name: Auto Update Shariah Database
 
 on:
   schedule:
-    # এই কমান্ডের মানে হলো: প্রতি মাসের ১ তারিখ রাত ১২টায় রোবটটি অটোমেটিক রান করবে।
     - cron: '0 0 1 * *'
-  workflow_dispatch: # এর মাধ্যমে আমরা চাইলে যেকোনো সময় ম্যানুয়ালি রোবট রান করতে পারব।
+  workflow_dispatch: 
 
 jobs:
   update-data:
@@ -12,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # এখানে v4 করা হয়েছে
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5 # এখানে v5 করা হয়েছে
       with:
         python-version: '3.x'
 
