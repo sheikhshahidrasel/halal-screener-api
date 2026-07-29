@@ -8,22 +8,18 @@ import pandas as pd
 # PART 1: STOCK SCREENING (AAOIFI Logic)
 # ==========================================
 def get_top_500_tickers():
-    """উইকিপিডিয়া থেকে S&P 500 এর টপ ৫০০ কোম্পানির লিস্ট অটোমেটিক নিবে"""
+    """নির্ভরযোগ্য ওপেন-সোর্স ডেটাবেস থেকে S&P 500 এর লিস্ট নিবে (কোনো ব্লক হবে না)"""
     print("Fetching Top 500 US Companies list...")
     try:
-        url = 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
-        # উইকিপিডিয়াকে বোকা বানানোর জন্য User-Agent (যাতে রোবট না ভাবে)
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
-        html_data = requests.get(url, headers=headers).text
-        
-        tables = pd.read_html(html_data)
-        df = tables[0]
+        # উইকিপিডিয়ার বদলে সরাসরি একটি Raw CSV ফাইল থেকে ডেটা টানা হচ্ছে
+        url = 'https://raw.githubusercontent.com/datasets/s-and-p-500-companies/master/data/constituents.csv'
+        df = pd.read_csv(url)
         tickers = df['Symbol'].tolist()
-        print(f"✅ Successfully fetched {len(tickers)} tickers from Wikipedia.")
+        print(f"✅ Successfully fetched {len(tickers)} tickers from CSV.")
         return tickers
     except Exception as e:
         print("Error fetching ticker list:", e)
-        # ব্যাকআপ হিসেবে কিছু পপুলার স্টকের নাম
+        # ব্যাকআপ
         return ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA"]
 def check_stock_shariah(ticker):
     """Yahoo Finance থেকে ব্যালেন্স শিট এনে হালাল/হারাম হিসাব করবে"""
