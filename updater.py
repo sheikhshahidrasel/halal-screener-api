@@ -7,21 +7,24 @@ import pandas as pd
 # ==========================================
 # PART 1: STOCK SCREENING (AAOIFI Logic)
 # ==========================================
-
 def get_top_500_tickers():
     """উইকিপিডিয়া থেকে S&P 500 এর টপ ৫০০ কোম্পানির লিস্ট অটোমেটিক নিবে"""
     print("Fetching Top 500 US Companies list...")
     try:
         url = 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
-        tables = pd.read_html(url)
+        # উইকিপিডিয়াকে বোকা বানানোর জন্য User-Agent (যাতে রোবট না ভাবে)
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+        html_data = requests.get(url, headers=headers).text
+        
+        tables = pd.read_html(html_data)
         df = tables[0]
         tickers = df['Symbol'].tolist()
+        print(f"✅ Successfully fetched {len(tickers)} tickers from Wikipedia.")
         return tickers
     except Exception as e:
         print("Error fetching ticker list:", e)
         # ব্যাকআপ হিসেবে কিছু পপুলার স্টকের নাম
         return ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA"]
-
 def check_stock_shariah(ticker):
     """Yahoo Finance থেকে ব্যালেন্স শিট এনে হালাল/হারাম হিসাব করবে"""
     try:
