@@ -3,6 +3,19 @@ import time
 import requests
 import yfinance as yf
 import pandas as pd
+import numpy as np
+
+class NumpyEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        if isinstance(obj, np.floating):
+            return float(obj)
+        if isinstance(obj, np.bool_):
+            return bool(obj)
+        if type(obj) == type:
+            return str(obj)
+        return super(NumpyEncoder, self).default(obj)
 
 def get_us_tickers():
     try:
@@ -47,9 +60,9 @@ def check_shariah_compliance(ticker):
         cash_ratio = (total_cash_investments / total_assets) * 100
         income_ratio = (interest_income / total_revenue) * 100
 
-        debt_pass = debt_ratio < 33.0
-        cash_pass = cash_ratio < 33.0
-        income_pass = income_ratio < 5.0
+        debt_pass = bool(debt_ratio < 33.0)
+        cash_pass = bool(cash_ratio < 33.0)
+        income_pass = bool(income_ratio < 5.0)
 
         if debt_pass and cash_pass and income_pass:
             status = "HALAL"
@@ -64,9 +77,9 @@ def check_shariah_compliance(ticker):
             "sector": sector,
             "status": status,
             "report": {
-                "debt_ratio": round(debt_ratio, 2),
-                "cash_ratio": round(cash_ratio, 2),
-                "income_ratio": round(income_ratio, 2),
+                "debt_ratio": round(float(debt_ratio), 2),
+                "cash_ratio": round(float(cash_ratio), 2),
+                "income_ratio": round(float(income_ratio), 2),
                 "debt_pass": debt_pass,
                 "cash_pass": cash_pass,
                 "income_pass": income_pass
@@ -88,7 +101,7 @@ def update_us_stocks():
         time.sleep(1)
 
     with open('us_data.json', 'w') as f:
-        json.dump(stock_data, f, indent=4)
+        json.dump(stock_data, f, indent=4, cls=NumpyEncoder)
     print(f"Data saved: {len(stock_data)} stocks.")
 
 if __name__ == "__main__":
