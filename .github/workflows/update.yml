@@ -1,33 +1,40 @@
-name: Auto Update Shariah Database
+name: Global Halal Stock Data Updater
 
 on:
+  workflow_dispatch: 
   schedule:
     - cron: '0 0 1 * *'
-  workflow_dispatch: 
 
 jobs:
-  update-data:
+  update-global-data:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v4  # এখানে v4 করা হয়েছে
-
+      uses: actions/checkout@v4
+    
     - name: Set up Python
-      uses: actions/setup-python@v5 # এখানে v5 করা হয়েছে
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
-
+        python-version: '3.10'
+        
     - name: Install Dependencies
-      run: pip install -r requirements.txt
-
-    - name: Run Updater Script
-      run: python updater.py
-
-    - name: Commit and Push Changes
       run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add data.json
-        git commit -m "Auto-updated Shariah Data" || exit 0
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run US Updater
+      run: python us_updater.py
+      
+    - name: Run EU & UK Updater
+      run: python eu_updater.py
+
+    - name: Run Asia Updater
+      run: python asia_updater.py
+      
+    - name: Commit and Push All Data
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add us_data.json eu_data.json asia_data.json
+        git commit -m "Auto-update Global Shariah stock data (US, EU, Asia)" || echo "No changes to commit"
         git push
