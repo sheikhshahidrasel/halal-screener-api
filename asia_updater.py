@@ -19,15 +19,31 @@ class NumpyEncoder(json.JSONEncoder):
 
 def get_asia_tickers():
     try:
-        url = "https://raw.githubusercontent.com/rreichel3/US-Stock-Symbols/main/all/asia_tickers_placeholder.txt"
-        response = requests.get(url)
-        if response.status_code == 200:
-            tickers = response.text.strip().split('\n')
-            return [t.strip() for t in tickers if t.strip()]
+        # Fetching real global/Asia tickers from a working GitHub raw CSV
+        url = "https://gist.githubusercontent.com/yepster1/b90404149664f954c3ae/raw/stocks.csv"
+        df = pd.read_csv(url, on_bad_lines='skip')
+        
+        if 'Symbols' in df.columns:
+            raw_tickers = df['Symbols'].dropna().astype(str).tolist()
         else:
-            raise Exception("Ticker list not found at URL")
+            raw_tickers = df.iloc[:, 0].dropna().astype(str).tolist()
+
+        asia_tickers = []
+        asia_suffixes = ['.AX', '.HK', '.T', '.KS', '.NS', '.BO']
+        
+        for ticker in raw_tickers:
+            clean_ticker = ticker.strip()
+            if any(clean_ticker.endswith(suffix) for suffix in asia_suffixes):
+                asia_tickers.append(clean_ticker)
+                
+        print(f"Successfully loaded {len(asia_tickers)} Asia-Pacific tickers.")
+        
+        if len(asia_tickers) < 10:
+             return asia_tickers + ["7203.T", "6758.T", "9984.T", "0700.HK", "9988.HK", "RELIANCE.NS"]
+        return asia_tickers
     except Exception as e:
         print(f"Error fetching Asia tickers: {e}")
+        # Fallback list in case of network issues
         return [
             "7203.T", "6758.T", "9984.T", "0700.HK", "9988.HK", 
             "0941.HK", "RELIANCE.NS", "TCS.NS", "INFY.NS", 
