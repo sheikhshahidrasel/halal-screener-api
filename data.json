@@ -1,8 +1,50 @@
 {
-  "AAPL": { "status": "HALAL", "income": "2.5%", "securities": "15.2%", "debt": "20.1%" },
-  "GOOG": { "status": "HALAL", "income": "1.8%", "securities": "10.5%", "debt": "12.0%" },
-  "TSLA": { "status": "HALAL", "income": "0.5%", "securities": "25.0%", "debt": "18.5%" },
-  "META": { "status": "DOUBTFUL", "income": "6.2%", "securities": "12.0%", "debt": "9.5%" },
-  "MSFT": { "status": "HALAL", "income": "3.1%", "securities": "22.4%", "debt": "14.2%" },
-  "NFLX": { "status": "HARAM", "income": "12.5%", "securities": "45.0%", "debt": "55.0%" }
+    "AAPL": {
+        "status": "HARAM",
+        "income": "< 5% (Est.)",
+        "securities": "Checked",
+        "debt": "8471099801600.0%"
+    },
+    "GOOG": {
+        "status": "HARAM",
+        "income": "< 5% (Est.)",
+        "securities": "Checked",
+        "debt": "12079099904000.0%"
+    },
+    "TSLA": {
+        "status": "HARAM",
+        "income": "< 5% (Est.)",
+        "securities": "Checked",
+        "debt": "1608000000000.0%"
+    },
+    "META": {
+        "status": "HARAM",
+        "income": "< 5% (Est.)",
+        "securities": "Checked",
+        "debt": "8676900044800.0%"
+    },
+    "MSFT": {
+        "status": "HARAM",
+        "income": "< 5% (Est.)",
+        "securities": "Checked",
+        "debt": "12543199641600.0%"
+    },
+    "NFLX": {
+        "status": "HARAM",
+        "income": "< 5% (Est.)",
+        "securities": "Checked",
+        "debt": "1665466060800.0%"
+    },
+    "AMZN": {
+        "status": "HARAM",
+        "income": "< 5% (Est.)",
+        "securities": "Checked",
+        "debt": "23554000486400.0%"
+    },
+    "NVDA": {
+        "status": "HARAM",
+        "income": "< 5% (Est.)",
+        "securities": "Checked",
+        "debt": "1281400012800.0%"
+    }
 }
