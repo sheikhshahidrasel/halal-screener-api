@@ -1,50 +1,44 @@
-{
-    "AAPL": {
-        "status": "HARAM",
-        "income": "< 5% (Est.)",
-        "securities": "Checked",
-        "debt": "8471099801600.0%"
+[
+    {
+        "ticker": "AAPL",
+        "name": "Apple Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 27.46% (Limit: 33%)"
     },
-    "GOOG": {
-        "status": "HARAM",
-        "income": "< 5% (Est.)",
-        "securities": "Checked",
-        "debt": "12079099904000.0%"
+    {
+        "ticker": "MSFT",
+        "name": "Microsoft Corporation",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 9.79% (Limit: 33%)"
     },
-    "TSLA": {
-        "status": "HARAM",
-        "income": "< 5% (Est.)",
-        "securities": "Checked",
-        "debt": "1608000000000.0%"
+    {
+        "ticker": "GOOGL",
+        "name": "Alphabet Inc.",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 9.96% (Limit: 33%)"
     },
-    "META": {
-        "status": "HARAM",
-        "income": "< 5% (Est.)",
-        "securities": "Checked",
-        "debt": "8676900044800.0%"
+    {
+        "ticker": "AMZN",
+        "name": "Amazon.com, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 18.70% (Limit: 33%)"
     },
-    "MSFT": {
-        "status": "HARAM",
-        "income": "< 5% (Est.)",
-        "securities": "Checked",
-        "debt": "12543199641600.0%"
+    {
+        "ticker": "META",
+        "name": "Meta Platforms, Inc.",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 22.92% (Limit: 33%)"
     },
-    "NFLX": {
-        "status": "HARAM",
-        "income": "< 5% (Est.)",
-        "securities": "Checked",
-        "debt": "1665466060800.0%"
-    },
-    "AMZN": {
-        "status": "HARAM",
-        "income": "< 5% (Est.)",
-        "securities": "Checked",
-        "debt": "23554000486400.0%"
-    },
-    "NVDA": {
-        "status": "HARAM",
-        "income": "< 5% (Est.)",
-        "securities": "Checked",
-        "debt": "1281400012800.0%"
+    {
+        "ticker": "TSLA",
+        "name": "Tesla, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 10.68% (Limit: 33%)"
     }
-}
+]
