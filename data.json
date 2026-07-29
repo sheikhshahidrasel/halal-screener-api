@@ -2096,5 +2096,1426 @@
         "sector": "Consumer Cyclical",
         "status": "HARAM",
         "reason": "Debt Ratio: 62.03% (Limit: 33%)"
+    },
+    {
+        "ticker": "MRSH",
+        "name": "Marsh",
+        "sector": "Financial Services",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 36.53% (Limit: 33%)"
+    },
+    {
+        "ticker": "MLM",
+        "name": "Martin Marietta Materials, Inc.",
+        "sector": "Basic Materials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 30.49% (Limit: 33%)"
+    },
+    {
+        "ticker": "MRVL",
+        "name": "Marvell Technology, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 21.50% (Limit: 33%)"
+    },
+    {
+        "ticker": "MAS",
+        "name": "Masco Corporation",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 61.82% (Limit: 33%)"
+    },
+    {
+        "ticker": "MA",
+        "name": "Mastercard Incorporated",
+        "sector": "Financial Services",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 35.08% (Limit: 33%)"
+    },
+    {
+        "ticker": "MKC",
+        "name": "McCormick & Company, Incorporat",
+        "sector": "Consumer Defensive",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 31.54% (Limit: 33%)"
+    },
+    {
+        "ticker": "MCD",
+        "name": "McDonald's Corporation",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 92.10% (Limit: 33%)"
+    },
+    {
+        "ticker": "MCK",
+        "name": "McKesson Corporation",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 10.46% (Limit: 33%)"
+    },
+    {
+        "ticker": "MDT",
+        "name": "Medtronic plc.",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 30.06% (Limit: 33%)"
+    },
+    {
+        "ticker": "MRK",
+        "name": "Merck & Company, Inc.",
+        "sector": "Healthcare",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 36.05% (Limit: 33%)"
+    },
+    {
+        "ticker": "META",
+        "name": "Meta Platforms, Inc.",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 22.92% (Limit: 33%)"
+    },
+    {
+        "ticker": "MET",
+        "name": "MetLife, Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 2.71% (Limit: 33%)"
+    },
+    {
+        "ticker": "MTD",
+        "name": "Mettler-Toledo International, I",
+        "sector": "Healthcare",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 57.97% (Limit: 33%)"
+    },
+    {
+        "ticker": "MGM",
+        "name": "MGM Resorts International",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 75.83% (Limit: 33%)"
+    },
+    {
+        "ticker": "MCHP",
+        "name": "Microchip Technology Incorporat",
+        "sector": "Technology",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 38.52% (Limit: 33%)"
+    },
+    {
+        "ticker": "MU",
+        "name": "Micron Technology, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 18.45% (Limit: 33%)"
+    },
+    {
+        "ticker": "MSFT",
+        "name": "Microsoft Corporation",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 9.79% (Limit: 33%)"
+    },
+    {
+        "ticker": "MAA",
+        "name": "Mid-America Apartment Communiti",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 45.34% (Limit: 33%)"
+    },
+    {
+        "ticker": "MRNA",
+        "name": "Moderna, Inc.",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 10.58% (Limit: 33%)"
+    },
+    {
+        "ticker": "TAP",
+        "name": "Molson Coors Beverage Company",
+        "sector": "Consumer Defensive",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 27.94% (Limit: 33%)"
+    },
+    {
+        "ticker": "MDLZ",
+        "name": "Mondelez International, Inc.",
+        "sector": "Consumer Defensive",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 30.50% (Limit: 33%)"
+    },
+    {
+        "ticker": "MPWR",
+        "name": "Monolithic Power Systems, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 0.48% (Limit: 33%)"
+    },
+    {
+        "ticker": "MNST",
+        "name": "Monster Beverage Corporation",
+        "sector": "Consumer Defensive",
+        "status": "HARAM",
+        "reason": "Debt Ratio: nan% (Limit: 33%)"
+    },
+    {
+        "ticker": "MCO",
+        "name": "Moody's Corporation",
+        "sector": "Financial Services",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 46.44% (Limit: 33%)"
+    },
+    {
+        "ticker": "MS",
+        "name": "Morgan Stanley",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 26.09% (Limit: 33%)"
+    },
+    {
+        "ticker": "MOS",
+        "name": "Mosaic Company (The)",
+        "sector": "Basic Materials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 21.57% (Limit: 33%)"
+    },
+    {
+        "ticker": "MSI",
+        "name": "Motorola Solutions, Inc.",
+        "sector": "Technology",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 50.37% (Limit: 33%)"
+    },
+    {
+        "ticker": "MSCI",
+        "name": "MSCI Inc.",
+        "sector": "Financial Services",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 110.65% (Limit: 33%)"
+    },
+    {
+        "ticker": "NDAQ",
+        "name": "Nasdaq, Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 30.48% (Limit: 33%)"
+    },
+    {
+        "ticker": "NTAP",
+        "name": "NetApp, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 25.44% (Limit: 33%)"
+    },
+    {
+        "ticker": "NFLX",
+        "name": "Netflix, Inc.",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 26.01% (Limit: 33%)"
+    },
+    {
+        "ticker": "NEM",
+        "name": "Newmont Corporation",
+        "sector": "Basic Materials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 9.78% (Limit: 33%)"
+    },
+    {
+        "ticker": "NWSA",
+        "name": "News Corporation",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 18.96% (Limit: 33%)"
+    },
+    {
+        "ticker": "NWS",
+        "name": "News Corporation",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 18.96% (Limit: 33%)"
+    },
+    {
+        "ticker": "NEE",
+        "name": "NextEra Energy, Inc.",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 44.95% (Limit: 33%)"
+    },
+    {
+        "ticker": "NKE",
+        "name": "Nike, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 28.72% (Limit: 33%)"
+    },
+    {
+        "ticker": "NI",
+        "name": "NiSource Inc",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 45.21% (Limit: 33%)"
+    },
+    {
+        "ticker": "NDSN",
+        "name": "Nordson Corporation",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 35.36% (Limit: 33%)"
+    },
+    {
+        "ticker": "NSC",
+        "name": "Norfolk Southern Corporation",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 38.25% (Limit: 33%)"
+    },
+    {
+        "ticker": "NTRS",
+        "name": "Northern Trust Corporation",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 7.90% (Limit: 33%)"
+    },
+    {
+        "ticker": "NOC",
+        "name": "Northrop Grumman Corporation",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 33.13% (Limit: 33%)"
+    },
+    {
+        "ticker": "NCLH",
+        "name": "Norwegian Cruise Line Holdings ",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 64.80% (Limit: 33%)"
+    },
+    {
+        "ticker": "NRG",
+        "name": "NRG Energy, Inc.",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 57.04% (Limit: 33%)"
+    },
+    {
+        "ticker": "NUE",
+        "name": "Nucor Corporation",
+        "sector": "Basic Materials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 20.29% (Limit: 33%)"
+    },
+    {
+        "ticker": "NVDA",
+        "name": "NVIDIA Corporation",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 5.34% (Limit: 33%)"
+    },
+    {
+        "ticker": "NVR",
+        "name": "NVR, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 17.98% (Limit: 33%)"
+    },
+    {
+        "ticker": "NXPI",
+        "name": "NXP Semiconductors N.V.",
+        "sector": "Technology",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 46.02% (Limit: 33%)"
+    },
+    {
+        "ticker": "ORLY",
+        "name": "O'Reilly Automotive, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 51.34% (Limit: 33%)"
+    },
+    {
+        "ticker": "OXY",
+        "name": "Occidental Petroleum Corporatio",
+        "sector": "Energy",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 27.74% (Limit: 33%)"
+    },
+    {
+        "ticker": "ODFL",
+        "name": "Old Dominion Freight Line, Inc.",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 0.73% (Limit: 33%)"
+    },
+    {
+        "ticker": "OMC",
+        "name": "Omnicom Group Inc.",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 19.73% (Limit: 33%)"
+    },
+    {
+        "ticker": "ON",
+        "name": "ON Semiconductor Corporation",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 23.99% (Limit: 33%)"
+    },
+    {
+        "ticker": "OKE",
+        "name": "ONEOK, Inc.",
+        "sector": "Energy",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 49.24% (Limit: 33%)"
+    },
+    {
+        "ticker": "ORCL",
+        "name": "Oracle Corporation",
+        "sector": "Technology",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 59.67% (Limit: 33%)"
+    },
+    {
+        "ticker": "OTIS",
+        "name": "Otis Worldwide Corporation",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 79.89% (Limit: 33%)"
+    },
+    {
+        "ticker": "PCAR",
+        "name": "PACCAR Inc.",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 35.27% (Limit: 33%)"
+    },
+    {
+        "ticker": "PKG",
+        "name": "Packaging Corporation of Americ",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 40.70% (Limit: 33%)"
+    },
+    {
+        "ticker": "PLTR",
+        "name": "Palantir Technologies Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 2.58% (Limit: 33%)"
+    },
+    {
+        "ticker": "PANW",
+        "name": "Palo Alto Networks, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 1.43% (Limit: 33%)"
+    },
+    {
+        "ticker": "PSKY",
+        "name": "Paramount Skydance Corporation",
+        "sector": "Communication Services",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 34.17% (Limit: 33%)"
+    },
+    {
+        "ticker": "PH",
+        "name": "Parker-Hannifin Corporation",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 31.48% (Limit: 33%)"
+    },
+    {
+        "ticker": "PAYX",
+        "name": "Paychex, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 28.49% (Limit: 33%)"
+    },
+    {
+        "ticker": "PYPL",
+        "name": "PayPal Holdings, Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 12.46% (Limit: 33%)"
+    },
+    {
+        "ticker": "PNR",
+        "name": "Pentair plc.",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 25.71% (Limit: 33%)"
+    },
+    {
+        "ticker": "PEP",
+        "name": "Pepsico, Inc.",
+        "sector": "Consumer Defensive",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 46.46% (Limit: 33%)"
+    },
+    {
+        "ticker": "PFE",
+        "name": "Pfizer, Inc.",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 30.73% (Limit: 33%)"
+    },
+    {
+        "ticker": "PCG",
+        "name": "Pacific Gas & Electric Co.",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 43.31% (Limit: 33%)"
+    },
+    {
+        "ticker": "PM",
+        "name": "Philip Morris International Inc",
+        "sector": "Consumer Defensive",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 70.59% (Limit: 33%)"
+    },
+    {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "sector": "Energy",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 26.76% (Limit: 33%)"
+    },
+    {
+        "ticker": "PNW",
+        "name": "Pinnacle West Capital Corporati",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 47.62% (Limit: 33%)"
+    },
+    {
+        "ticker": "PNC",
+        "name": "PNC Financial Services Group, I",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 9.96% (Limit: 33%)"
+    },
+    {
+        "ticker": "PPG",
+        "name": "PPG Industries, Inc.",
+        "sector": "Basic Materials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 35.73% (Limit: 33%)"
+    },
+    {
+        "ticker": "PPL",
+        "name": "PPL Corporation",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 42.77% (Limit: 33%)"
+    },
+    {
+        "ticker": "PFG",
+        "name": "Principal Financial Group Inc",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 1.16% (Limit: 33%)"
+    },
+    {
+        "ticker": "PG",
+        "name": "Procter & Gamble Company (The)",
+        "sector": "Consumer Defensive",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 28.32% (Limit: 33%)"
+    },
+    {
+        "ticker": "PGR",
+        "name": "Progressive Corporation (The)",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 5.61% (Limit: 33%)"
+    },
+    {
+        "ticker": "PLD",
+        "name": "Prologis, Inc.",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 36.14% (Limit: 33%)"
+    },
+    {
+        "ticker": "PRU",
+        "name": "Prudential Financial, Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 2.97% (Limit: 33%)"
+    },
+    {
+        "ticker": "PEG",
+        "name": "Public Service Enterprise Group",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 42.03% (Limit: 33%)"
+    },
+    {
+        "ticker": "PTC",
+        "name": "PTC Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 20.70% (Limit: 33%)"
+    },
+    {
+        "ticker": "PSA",
+        "name": "Public Storage",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 50.74% (Limit: 33%)"
+    },
+    {
+        "ticker": "PHM",
+        "name": "PulteGroup, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 12.73% (Limit: 33%)"
+    },
+    {
+        "ticker": "PWR",
+        "name": "Quanta Services, Inc.",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 25.75% (Limit: 33%)"
+    },
+    {
+        "ticker": "QCOM",
+        "name": "QUALCOMM Incorporated",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 29.54% (Limit: 33%)"
+    },
+    {
+        "ticker": "DGX",
+        "name": "Quest Diagnostics Incorporated",
+        "sector": "Healthcare",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 40.59% (Limit: 33%)"
+    },
+    {
+        "ticker": "Q",
+        "name": "Qnity Electronics, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 28.62% (Limit: 33%)"
+    },
+    {
+        "ticker": "RL",
+        "name": "Ralph Lauren Corporation",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 38.88% (Limit: 33%)"
+    },
+    {
+        "ticker": "RJF",
+        "name": "Raymond James Financial, Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 4.78% (Limit: 33%)"
+    },
+    {
+        "ticker": "RTX",
+        "name": "RTX Corporation",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 23.09% (Limit: 33%)"
+    },
+    {
+        "ticker": "O",
+        "name": "Realty Income Corporation",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 40.31% (Limit: 33%)"
+    },
+    {
+        "ticker": "REG",
+        "name": "Regency Centers Corporation",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 41.06% (Limit: 33%)"
+    },
+    {
+        "ticker": "REGN",
+        "name": "Regeneron Pharmaceuticals, Inc.",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 6.67% (Limit: 33%)"
+    },
+    {
+        "ticker": "RF",
+        "name": "Regions Financial Corporation",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 3.08% (Limit: 33%)"
+    },
+    {
+        "ticker": "RSG",
+        "name": "Republic Services, Inc.",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 40.17% (Limit: 33%)"
+    },
+    {
+        "ticker": "RMD",
+        "name": "ResMed Inc.",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 10.42% (Limit: 33%)"
+    },
+    {
+        "ticker": "RVTY",
+        "name": "Revvity, Inc.",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 27.93% (Limit: 33%)"
+    },
+    {
+        "ticker": "HOOD",
+        "name": "Robinhood Markets, Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 30.48% (Limit: 33%)"
+    },
+    {
+        "ticker": "ROK",
+        "name": "Rockwell Automation, Inc.",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 32.51% (Limit: 33%)"
+    },
+    {
+        "ticker": "ROL",
+        "name": "Rollins, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 33.05% (Limit: 33%)"
+    },
+    {
+        "ticker": "ROP",
+        "name": "Roper Technologies, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 27.04% (Limit: 33%)"
+    },
+    {
+        "ticker": "ROST",
+        "name": "Ross Stores, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 33.52% (Limit: 33%)"
+    },
+    {
+        "ticker": "RCL",
+        "name": "Royal Caribbean Cruises Ltd.",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 52.94% (Limit: 33%)"
+    },
+    {
+        "ticker": "SPGI",
+        "name": "S&P Global Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 22.19% (Limit: 33%)"
+    },
+    {
+        "ticker": "CRM",
+        "name": "Salesforce, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 15.29% (Limit: 33%)"
+    },
+    {
+        "ticker": "SNDK",
+        "name": "Sandisk Corporation",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 15.73% (Limit: 33%)"
+    },
+    {
+        "ticker": "SBAC",
+        "name": "SBA Communications Corporation",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 132.35% (Limit: 33%)"
+    },
+    {
+        "ticker": "SLB",
+        "name": "SLB Limited",
+        "sector": "Energy",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 21.21% (Limit: 33%)"
+    },
+    {
+        "ticker": "STX",
+        "name": "Seagate Technology Holdings PLC",
+        "sector": "Technology",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 62.26% (Limit: 33%)"
+    },
+    {
+        "ticker": "SRE",
+        "name": "DBA Sempra",
+        "sector": "Utilities",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 31.59% (Limit: 33%)"
+    },
+    {
+        "ticker": "NOW",
+        "name": "ServiceNow, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 9.23% (Limit: 33%)"
+    },
+    {
+        "ticker": "SHW",
+        "name": "Sherwin-Williams Company (The)",
+        "sector": "Basic Materials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 49.97% (Limit: 33%)"
+    },
+    {
+        "ticker": "SPG",
+        "name": "Simon Property Group, Inc.",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 71.88% (Limit: 33%)"
+    },
+    {
+        "ticker": "SWKS",
+        "name": "Skyworks Solutions, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 15.20% (Limit: 33%)"
+    },
+    {
+        "ticker": "SJM",
+        "name": "The J.M. Smucker Company",
+        "sector": "Consumer Defensive",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 43.71% (Limit: 33%)"
+    },
+    {
+        "ticker": "SW",
+        "name": "Smurfit WestRock plc",
+        "sector": "Consumer Cyclical",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 30.50% (Limit: 33%)"
+    },
+    {
+        "ticker": "SNA",
+        "name": "Snap-On Incorporated",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 15.36% (Limit: 33%)"
+    },
+    {
+        "ticker": "SOLV",
+        "name": "Solventum Corporation",
+        "sector": "Healthcare",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 35.22% (Limit: 33%)"
+    },
+    {
+        "ticker": "SO",
+        "name": "Southern Company (The)",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 47.57% (Limit: 33%)"
+    },
+    {
+        "ticker": "LUV",
+        "name": "Southwest Airlines Company",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 20.58% (Limit: 33%)"
+    },
+    {
+        "ticker": "SWK",
+        "name": "Stanley Black & Decker, Inc.",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 28.23% (Limit: 33%)"
+    },
+    {
+        "ticker": "SBUX",
+        "name": "Starbucks Corporation",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 83.11% (Limit: 33%)"
+    },
+    {
+        "ticker": "STT",
+        "name": "State Street Corporation",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 7.91% (Limit: 33%)"
+    },
+    {
+        "ticker": "STLD",
+        "name": "Steel Dynamics, Inc.",
+        "sector": "Basic Materials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 25.65% (Limit: 33%)"
+    },
+    {
+        "ticker": "STE",
+        "name": "STERIS plc (Ireland)",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 19.44% (Limit: 33%)"
+    },
+    {
+        "ticker": "SYK",
+        "name": "Stryker Corporation",
+        "sector": "Healthcare",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 33.15% (Limit: 33%)"
+    },
+    {
+        "ticker": "SMCI",
+        "name": "Super Micro Computer, Inc.",
+        "sector": "Technology",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 34.09% (Limit: 33%)"
+    },
+    {
+        "ticker": "SYF",
+        "name": "Synchrony Financial",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 12.75% (Limit: 33%)"
+    },
+    {
+        "ticker": "SNPS",
+        "name": "Synopsys, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 29.64% (Limit: 33%)"
+    },
+    {
+        "ticker": "SYY",
+        "name": "Sysco Corporation",
+        "sector": "Consumer Defensive",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 54.13% (Limit: 33%)"
+    },
+    {
+        "ticker": "TMUS",
+        "name": "T-Mobile US, Inc.",
+        "sector": "Communication Services",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 55.77% (Limit: 33%)"
+    },
+    {
+        "ticker": "TROW",
+        "name": "T. Rowe Price Group, Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 3.12% (Limit: 33%)"
+    },
+    {
+        "ticker": "TTWO",
+        "name": "Take-Two Interactive Software, ",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 31.53% (Limit: 33%)"
+    },
+    {
+        "ticker": "TPR",
+        "name": "Tapestry, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 59.25% (Limit: 33%)"
+    },
+    {
+        "ticker": "TRGP",
+        "name": "Targa Resources, Inc.",
+        "sector": "Energy",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 69.48% (Limit: 33%)"
+    },
+    {
+        "ticker": "TGT",
+        "name": "Target Corporation",
+        "sector": "Consumer Defensive",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 34.11% (Limit: 33%)"
+    },
+    {
+        "ticker": "TEL",
+        "name": "TE Connectivity plc",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 23.20% (Limit: 33%)"
+    },
+    {
+        "ticker": "TDY",
+        "name": "Teledyne Technologies Incorpora",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 17.29% (Limit: 33%)"
+    },
+    {
+        "ticker": "TER",
+        "name": "Teradyne, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 6.77% (Limit: 33%)"
+    },
+    {
+        "ticker": "TSLA",
+        "name": "Tesla, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 10.68% (Limit: 33%)"
+    },
+    {
+        "ticker": "TXN",
+        "name": "Texas Instruments Incorporated",
+        "sector": "Technology",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 40.62% (Limit: 33%)"
+    },
+    {
+        "ticker": "TPL",
+        "name": "Texas Pacific Land Corporation",
+        "sector": "Energy",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 1.00% (Limit: 33%)"
+    },
+    {
+        "ticker": "TXT",
+        "name": "Textron Inc.",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 21.39% (Limit: 33%)"
+    },
+    {
+        "ticker": "TMO",
+        "name": "Thermo Fisher Scientific Inc",
+        "sector": "Healthcare",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 35.69% (Limit: 33%)"
+    },
+    {
+        "ticker": "TJX",
+        "name": "TJX Companies, Inc. (The)",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 37.71% (Limit: 33%)"
+    },
+    {
+        "ticker": "TKO",
+        "name": "TKO Group Holdings, Inc.",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 26.22% (Limit: 33%)"
+    },
+    {
+        "ticker": "TTD",
+        "name": "The Trade Desk, Inc.",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 7.09% (Limit: 33%)"
+    },
+    {
+        "ticker": "TSCO",
+        "name": "Tractor Supply Company",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 54.35% (Limit: 33%)"
+    },
+    {
+        "ticker": "TT",
+        "name": "Trane Technologies plc",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 21.55% (Limit: 33%)"
+    },
+    {
+        "ticker": "TDG",
+        "name": "Transdigm Group Incorporated",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 131.08% (Limit: 33%)"
+    },
+    {
+        "ticker": "TRV",
+        "name": "The Travelers Companies, Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 6.45% (Limit: 33%)"
+    },
+    {
+        "ticker": "TRMB",
+        "name": "Trimble Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 14.95% (Limit: 33%)"
+    },
+    {
+        "ticker": "TFC",
+        "name": "Truist Financial Corporation",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 11.74% (Limit: 33%)"
+    },
+    {
+        "ticker": "TYL",
+        "name": "Tyler Technologies, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 11.40% (Limit: 33%)"
+    },
+    {
+        "ticker": "TSN",
+        "name": "Tyson Foods, Inc.",
+        "sector": "Consumer Defensive",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 24.09% (Limit: 33%)"
+    },
+    {
+        "ticker": "USB",
+        "name": "U.S. Bancorp",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 9.88% (Limit: 33%)"
+    },
+    {
+        "ticker": "UBER",
+        "name": "Uber Technologies, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 19.55% (Limit: 33%)"
+    },
+    {
+        "ticker": "UDR",
+        "name": "UDR, Inc.",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 56.61% (Limit: 33%)"
+    },
+    {
+        "ticker": "ULTA",
+        "name": "Ulta Beauty, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 31.18% (Limit: 33%)"
+    },
+    {
+        "ticker": "UNP",
+        "name": "Union Pacific Corporation",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 47.09% (Limit: 33%)"
+    },
+    {
+        "ticker": "UAL",
+        "name": "United Airlines Holdings, Inc.",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 40.60% (Limit: 33%)"
+    },
+    {
+        "ticker": "UPS",
+        "name": "United Parcel Service, Inc.",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 39.12% (Limit: 33%)"
+    },
+    {
+        "ticker": "URI",
+        "name": "United Rentals, Inc.",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 52.47% (Limit: 33%)"
+    },
+    {
+        "ticker": "UNH",
+        "name": "UnitedHealth Group Incorporated",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 25.32% (Limit: 33%)"
+    },
+    {
+        "ticker": "UHS",
+        "name": "Universal Health Services, Inc.",
+        "sector": "Healthcare",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 33.27% (Limit: 33%)"
+    },
+    {
+        "ticker": "VLO",
+        "name": "Valero Energy Corporation",
+        "sector": "Energy",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 20.18% (Limit: 33%)"
+    },
+    {
+        "ticker": "VEEV",
+        "name": "Veeva Systems Inc.",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 1.07% (Limit: 33%)"
+    },
+    {
+        "ticker": "VTR",
+        "name": "Ventas, Inc.",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 47.91% (Limit: 33%)"
+    },
+    {
+        "ticker": "VLTO",
+        "name": "Veralto Corp",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 37.42% (Limit: 33%)"
+    },
+    {
+        "ticker": "VRSN",
+        "name": "VeriSign, Inc.",
+        "sector": "Technology",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 135.61% (Limit: 33%)"
+    },
+    {
+        "ticker": "VRSK",
+        "name": "Verisk Analytics, Inc.",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 79.10% (Limit: 33%)"
+    },
+    {
+        "ticker": "VZ",
+        "name": "Verizon Communications Inc.",
+        "sector": "Communication Services",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 44.93% (Limit: 33%)"
+    },
+    {
+        "ticker": "VRTX",
+        "name": "Vertex Pharmaceuticals Incorpor",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 7.92% (Limit: 33%)"
+    },
+    {
+        "ticker": "VRT",
+        "name": "Vertiv Holdings, LLC",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 26.43% (Limit: 33%)"
+    },
+    {
+        "ticker": "VTRS",
+        "name": "Viatris Inc.",
+        "sector": "Healthcare",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 39.52% (Limit: 33%)"
+    },
+    {
+        "ticker": "VICI",
+        "name": "VICI Properties Inc.",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 37.86% (Limit: 33%)"
+    },
+    {
+        "ticker": "V",
+        "name": "Visa Inc.",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 25.27% (Limit: 33%)"
+    },
+    {
+        "ticker": "VST",
+        "name": "Vistra Corp.",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 48.30% (Limit: 33%)"
+    },
+    {
+        "ticker": "VMC",
+        "name": "Vulcan Materials Company (Holdi",
+        "sector": "Basic Materials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 29.25% (Limit: 33%)"
+    },
+    {
+        "ticker": "WRB",
+        "name": "W.R. Berkley Corporation",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 6.44% (Limit: 33%)"
+    },
+    {
+        "ticker": "GWW",
+        "name": "W.W. Grainger, Inc.",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 31.93% (Limit: 33%)"
+    },
+    {
+        "ticker": "WAB",
+        "name": "Westinghouse Air Brake Technolo",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 25.11% (Limit: 33%)"
+    },
+    {
+        "ticker": "WMT",
+        "name": "Walmart Inc.",
+        "sector": "Consumer Defensive",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 23.57% (Limit: 33%)"
+    },
+    {
+        "ticker": "DIS",
+        "name": "Walt Disney Company (The)",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 22.72% (Limit: 33%)"
+    },
+    {
+        "ticker": "WBD",
+        "name": "Warner Bros. Discovery, Inc. - ",
+        "sector": "Communication Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 32.54% (Limit: 33%)"
+    },
+    {
+        "ticker": "WM",
+        "name": "Waste Management, Inc.",
+        "sector": "Industrials",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 49.98% (Limit: 33%)"
+    },
+    {
+        "ticker": "WAT",
+        "name": "Waters Corporation",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 29.37% (Limit: 33%)"
+    },
+    {
+        "ticker": "WEC",
+        "name": "WEC Energy Group, Inc.",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 43.31% (Limit: 33%)"
+    },
+    {
+        "ticker": "WFC",
+        "name": "Wells Fargo & Company",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 8.98% (Limit: 33%)"
+    },
+    {
+        "ticker": "WELL",
+        "name": "Welltower Inc.",
+        "sector": "Real Estate",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 31.77% (Limit: 33%)"
+    },
+    {
+        "ticker": "WST",
+        "name": "West Pharmaceutical Services, I",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 7.52% (Limit: 33%)"
+    },
+    {
+        "ticker": "WDC",
+        "name": "Western Digital Corporation",
+        "sector": "Technology",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 33.65% (Limit: 33%)"
+    },
+    {
+        "ticker": "WY",
+        "name": "Weyerhaeuser Company",
+        "sector": "Real Estate",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 33.69% (Limit: 33%)"
+    },
+    {
+        "ticker": "WSM",
+        "name": "Williams-Sonoma, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 26.92% (Limit: 33%)"
+    },
+    {
+        "ticker": "WMB",
+        "name": "Williams Companies, Inc. (The)",
+        "sector": "Energy",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 50.18% (Limit: 33%)"
+    },
+    {
+        "ticker": "WTW",
+        "name": "Willis Towers Watson Public Lim",
+        "sector": "Financial Services",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 23.38% (Limit: 33%)"
+    },
+    {
+        "ticker": "WDAY",
+        "name": "Workday, Inc.",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 21.14% (Limit: 33%)"
+    },
+    {
+        "ticker": "WYNN",
+        "name": "Wynn Resorts, Limited",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 92.89% (Limit: 33%)"
+    },
+    {
+        "ticker": "XEL",
+        "name": "Xcel Energy Inc.",
+        "sector": "Utilities",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 42.74% (Limit: 33%)"
+    },
+    {
+        "ticker": "XYL",
+        "name": "Xylem Inc.",
+        "sector": "Industrials",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 11.70% (Limit: 33%)"
+    },
+    {
+        "ticker": "YUM",
+        "name": "Yum! Brands, Inc.",
+        "sector": "Consumer Cyclical",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 160.90% (Limit: 33%)"
+    },
+    {
+        "ticker": "ZBRA",
+        "name": "Zebra Technologies Corporation",
+        "sector": "Technology",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 31.72% (Limit: 33%)"
+    },
+    {
+        "ticker": "ZBH",
+        "name": "Zimmer Biomet Holdings, Inc.",
+        "sector": "Healthcare",
+        "status": "HALAL",
+        "reason": "Debt Ratio: 32.56% (Limit: 33%)"
+    },
+    {
+        "ticker": "ZTS",
+        "name": "Zoetis Inc.",
+        "sector": "Healthcare",
+        "status": "HARAM",
+        "reason": "Debt Ratio: 59.73% (Limit: 33%)"
     }
 ]
