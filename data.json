@@ -1,0 +1,8 @@
+{
+  "AAPL": { "status": "HALAL", "income": "2.5%", "securities": "15.2%", "debt": "20.1%" },
+  "GOOG": { "status": "HALAL", "income": "1.8%", "securities": "10.5%", "debt": "12.0%" },
+  "TSLA": { "status": "HALAL", "income": "0.5%", "securities": "25.0%", "debt": "18.5%" },
+  "META": { "status": "DOUBTFUL", "income": "6.2%", "securities": "12.0%", "debt": "9.5%" },
+  "MSFT": { "status": "HALAL", "income": "3.1%", "securities": "22.4%", "debt": "14.2%" },
+  "NFLX": { "status": "HARAM", "income": "12.5%", "securities": "45.0%", "debt": "55.0%" }
+}
