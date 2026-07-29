@@ -19,15 +19,34 @@ class NumpyEncoder(json.JSONEncoder):
 
 def get_eu_tickers():
     try:
-        url = "https://raw.githubusercontent.com/rreichel3/US-Stock-Symbols/main/all/eu_tickers_placeholder.txt"
-        response = requests.get(url)
-        if response.status_code == 200:
-            tickers = response.text.strip().split('\n')
-            return [t.strip() for t in tickers if t.strip()]
+        # Fetching real London Stock Exchange (LSE) tickers from a working GitHub raw CSV
+        url = "https://raw.githubusercontent.com/ensbyp/Investor/master/Data/LSE.csv"
+        df = pd.read_csv(url, on_bad_lines='skip')
+        
+        # Extract symbols from the 'Symbol' column or the first column
+        if 'Symbol' in df.columns:
+            raw_tickers = df['Symbol'].dropna().astype(str).tolist()
         else:
-            raise Exception("Ticker list not found at URL")
+            raw_tickers = df.iloc[:, 0].dropna().astype(str).tolist()
+
+        eu_tickers = []
+        for ticker in raw_tickers:
+            clean_ticker = ticker.strip()
+            if clean_ticker and clean_ticker.upper() != 'SYMBOL':
+                # Ensure LSE tickers have the '.L' suffix for Yahoo Finance
+                if not clean_ticker.endswith(".L"):
+                     eu_tickers.append(f"{clean_ticker}.L")
+                else:
+                     eu_tickers.append(clean_ticker)
+                     
+        print(f"Successfully loaded {len(eu_tickers)} EU/UK tickers.")
+        
+        if len(eu_tickers) < 10:
+             return eu_tickers + ["SHEL.L", "AZN.L", "HSBA.L", "ULVR.L", "BP.L"]
+        return eu_tickers
     except Exception as e:
         print(f"Error fetching EU tickers: {e}")
+        # Fallback list in case of network issues
         return [
             "SHEL.L", "AZN.L", "HSBA.L", "ULVR.L", "BP.L", 
             "ASML.AS", "MC.PA", "SAP.DE", "SIE.DE", "TTE.PA", 
