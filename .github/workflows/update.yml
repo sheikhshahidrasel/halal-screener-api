@@ -1,0 +1,34 @@
+name: Auto Update Shariah Database
+
+on:
+  schedule:
+    # এই কমান্ডের মানে হলো: প্রতি মাসের ১ তারিখ রাত ১২টায় রোবটটি অটোমেটিক রান করবে।
+    - cron: '0 0 1 * *'
+  workflow_dispatch: # এর মাধ্যমে আমরা চাইলে যেকোনো সময় ম্যানুয়ালি রোবট রান করতে পারব।
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run Updater Script
+      run: python updater.py
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add data.json
+        git commit -m "Auto-updated Shariah Data" || exit 0
+        git push
