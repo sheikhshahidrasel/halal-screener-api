@@ -21,6 +21,7 @@ def get_top_500_tickers():
         print("Error fetching ticker list:", e)
         # ব্যাকআপ
         return ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA"]
+
 def check_stock_shariah(ticker):
     """Yahoo Finance থেকে ব্যালেন্স শিট এনে হালাল/হারাম হিসাব করবে"""
     try:
@@ -72,14 +73,14 @@ def update_stocks():
     tickers = get_top_500_tickers()
     stock_data = []
     
-    # আমরা আপাতত প্রথম ৩০০ কোম্পানি নিচ্ছি যাতে Yahoo Finance ব্লক না করে (Rate Limit)
-    for ticker in tickers[:300]: 
+    # S&P 500 এর পুরো ৫০০ কোম্পানির লিস্ট চেক করবে (লিমিট তুলে দেওয়া হলো)
+    for ticker in tickers: 
         print(f"Checking {ticker}...")
         result = check_stock_shariah(ticker)
         if result:
             stock_data.append(result)
         
-        # Yahoo-কে বুঝতে না দেওয়ার জন্য প্রতি সার্চে ১ সেকেন্ড বিরতি (যাতে রোবট না ভাবে)
+        # Yahoo-কে বুঝতে না দেওয়ার জন্য প্রতি সার্চে ১ সেকেন্ড বিরতি
         time.sleep(1)
             
     # ডেটাবেস ফাইলে সেভ করা
