@@ -47,7 +47,7 @@
         "sector": "Communication Services",
         "status": "HALAL",
         "report": {
-            "debt_ratio": 19.93,
+            "debt_ratio": 0.0,
             "cash_ratio": 20.93,
             "income_ratio": 2.25,
             "debt_pass": true,
