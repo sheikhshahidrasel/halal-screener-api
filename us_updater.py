@@ -1,5 +1,6 @@
 import json
 import time
+import random
 import requests
 import yfinance as yf
 import pandas as pd
@@ -19,12 +20,26 @@ class NumpyEncoder(json.JSONEncoder):
 
 def get_us_tickers():
     try:
-        url = "https://raw.githubusercontent.com/rreichel3/US-Stock-Symbols/main/all/all_tickers.txt"
-        response = requests.get(url)
-        tickers = response.text.strip().split('\n')
-        return [t.strip() for t in tickers if t.strip()]
+        # Fetching 10,000+ US tickers directly from the SEC official API
+        headers = {'User-Agent': 'HalalScreenerApp (contact@example.com)'}
+        url = "https://www.sec.gov/files/company_tickers.json"
+        
+        response = requests.get(url, headers=headers)
+        data = response.json()
+        
+        tickers = []
+        for key in data:
+            tickers.append(data[key]['ticker'])
+            
+        # Remove duplicate tickers
+        unique_tickers = list(set(tickers))
+        print(f"Successfully loaded {len(unique_tickers)} US tickers from SEC.")
+        
+        return unique_tickers
+        
     except Exception as e:
-        print(f"Error fetching tickers: {e}")
+        print(f"Error fetching SEC tickers: {e}")
+        # Fallback list in case of network issues
         return ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA", "ORCL"]
 
 def check_shariah_compliance(ticker):
@@ -53,8 +68,22 @@ def check_shariah_compliance(ticker):
         except KeyError:
             return None
 
+        # Handle missing essential data by marking as DOUBTFUL
         if total_assets == 0 or total_revenue == 0:
-            return None
+            return {
+                "ticker": ticker,
+                "name": name,
+                "sector": sector,
+                "status": "DOUBTFUL",
+                "report": {
+                    "debt_ratio": 0.0,
+                    "cash_ratio": 0.0,
+                    "income_ratio": 0.0,
+                    "debt_pass": False,
+                    "cash_pass": False,
+                    "income_pass": False
+                }
+            }
 
         debt_ratio = (total_debt / total_assets) * 100
         cash_ratio = (total_cash_investments / total_assets) * 100
@@ -64,12 +93,12 @@ def check_shariah_compliance(ticker):
         cash_pass = bool(cash_ratio < 33.0)
         income_pass = bool(income_ratio < 5.0)
 
+        # Fixed Shariah Logic (AAOIFI Standard)
         if debt_pass and cash_pass and income_pass:
             status = "HALAL"
-        elif not debt_pass and not cash_pass and not income_pass:
-            status = "HARAM"
         else:
-            status = "DOUBTFUL"
+            # If ANY of the 3 conditions fail, the stock is HARAM
+            status = "HARAM"
 
         return {
             "ticker": ticker,
@@ -98,11 +127,13 @@ def update_us_stocks():
         result = check_shariah_compliance(ticker)
         if result:
             stock_data.append(result)
-        time.sleep(1)
+        
+        # Anti-ban randomized sleep to prevent GitHub Actions IP block from yfinance
+        time.sleep(random.uniform(1.0, 2.5))
 
     with open('us_data.json', 'w') as f:
         json.dump(stock_data, f, indent=4, cls=NumpyEncoder)
-    print(f"Data saved: {len(stock_data)} stocks.")
+    print(f"Data saved: {len(stock_data)} US stocks.")
 
 if __name__ == "__main__":
     update_us_stocks()
