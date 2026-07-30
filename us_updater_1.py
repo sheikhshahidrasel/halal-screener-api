@@ -20,7 +20,7 @@ class NumpyEncoder(json.JSONEncoder):
 
 def get_us_tickers():
     try:
-        # Fetching 10,000+ US tickers directly from the SEC official API
+        # Fetching US tickers directly from the SEC official API
         headers = {'User-Agent': 'HalalScreenerApp (contact@example.com)'}
         url = "https://www.sec.gov/files/company_tickers.json"
         
@@ -118,11 +118,18 @@ def check_shariah_compliance(ticker):
         print(f"Error processing {ticker}: {e}")
         return None
 
-def update_us_stocks():
+def update_us_stocks_part_1():
     tickers = get_us_tickers()
+    
+    # SLICING LOGIC: Take only the FIRST HALF of the tickers
+    mid_point = len(tickers) // 2
+    tickers_part_1 = tickers[:mid_point]
+    
+    print(f"Processing US Part 1: {len(tickers_part_1)} tickers...")
+    
     stock_data = []
 
-    for ticker in tickers:
+    for ticker in tickers_part_1:
         print(f"Processing {ticker}...")
         result = check_shariah_compliance(ticker)
         if result:
@@ -131,9 +138,11 @@ def update_us_stocks():
         # Anti-ban randomized sleep to prevent GitHub Actions IP block from yfinance
         time.sleep(random.uniform(1.0, 2.5))
 
-    with open('us_data.json', 'w') as f:
+    # Save to a specific file for Part 1
+    with open('us_data_1.json', 'w') as f:
         json.dump(stock_data, f, indent=4, cls=NumpyEncoder)
-    print(f"Data saved: {len(stock_data)} US stocks.")
+        
+    print(f"Data saved: {len(stock_data)} US stocks saved to us_data_1.json.")
 
 if __name__ == "__main__":
-    update_us_stocks()
+    update_us_stocks_part_1()
