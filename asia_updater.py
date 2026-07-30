@@ -18,42 +18,39 @@ class NumpyEncoder(json.JSONEncoder):
         return super(NumpyEncoder, self).default(obj)
 
 def get_asia_tickers():
-    try:
-        # Fetching real global/Asia tickers from a working GitHub raw CSV
-        url = "https://gist.githubusercontent.com/yepster1/b90404149664f954c3ae/raw/stocks.csv"
-        df = pd.read_csv(url, on_bad_lines='skip')
+    print("Generating massive Asian market ticker list...")
+    tickers = []
+    
+    # 1. Japan (Tokyo Stock Exchange) - Tickers: 1300.T to 9999.T
+    for i in range(1300, 9999):
+        tickers.append(f"{i}.T")
         
-        if 'Symbols' in df.columns:
-            raw_tickers = df['Symbols'].dropna().astype(str).tolist()
-        else:
-            raw_tickers = df.iloc[:, 0].dropna().astype(str).tolist()
-
-        asia_tickers = []
-        asia_suffixes = ['.AX', '.HK', '.T', '.KS', '.NS', '.BO']
+    # 2. Hong Kong (HKEX) - Tickers: 0001.HK to 3999.HK
+    for i in range(1, 4000):
+        tickers.append(f"{i:04d}.HK")
         
-        for ticker in raw_tickers:
-            clean_ticker = ticker.strip()
-            if any(clean_ticker.endswith(suffix) for suffix in asia_suffixes):
-                asia_tickers.append(clean_ticker)
-                
-        print(f"Successfully loaded {len(asia_tickers)} Asia-Pacific tickers.")
-        
-        if len(asia_tickers) < 10:
-             return asia_tickers + ["7203.T", "6758.T", "9984.T", "0700.HK", "9988.HK", "RELIANCE.NS"]
-        return asia_tickers
-    except Exception as e:
-        print(f"Error fetching Asia tickers: {e}")
-        # Fallback list in case of network issues
-        return [
-            "7203.T", "6758.T", "9984.T", "0700.HK", "9988.HK", 
-            "0941.HK", "RELIANCE.NS", "TCS.NS", "INFY.NS", 
-            "005930.KS", "000660.KS", "1810.HK", "3690.HK"
-        ]
+    # 3. Top Indian Stocks (NSE) - Manual core list
+    nifty_stocks = [
+        "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "ICICIBANK.NS", "BHARTIARTL.NS",
+        "SBIN.NS", "INFY.NS", "LICI.NS", "ITC.NS", "HINDUNILVR.NS",
+        "LT.NS", "BAJFINANCE.NS", "HCLTECH.NS", "MARUTI.NS", "SUNPHARMA.NS",
+        "TATAMOTORS.NS", "TATASTEEL.NS", "KOTAKBANK.NS", "ASIANPAINT.NS",
+        "TITAN.NS", "NTPC.NS", "HAL.NS", "ONGC.NS", "POWERGRID.NS", "ADANIENT.NS"
+    ]
+    tickers.extend(nifty_stocks)
+    
+    print(f"Total Asian tickers to scan: {len(tickers)}")
+    return tickers
 
 def check_shariah_compliance(ticker):
     try:
         stock = yf.Ticker(ticker)
         info = stock.info
+        
+        # Skip gracefully if it's an invalid generated ticker
+        if not info or ('regularMarketPrice' not in info and 'previousClose' not in info and 'sector' not in info):
+            return None
+
         name = info.get('shortName', ticker)
         sector = info.get('sector', 'Unknown')
 
@@ -108,24 +105,30 @@ def check_shariah_compliance(ticker):
                 "income_pass": income_pass
             }
         }
-    except Exception as e:
-        print(f"Error processing {ticker}: {e}")
+    except Exception:
         return None
 
 def update_asia_stocks():
     tickers = get_asia_tickers()
     stock_data = []
+    count = 0
 
     for ticker in tickers:
-        print(f"Processing {ticker}...")
+        count += 1
+        if count % 100 == 0:
+            print(f"Scanning progress: {count}/{len(tickers)}...")
+            
         result = check_shariah_compliance(ticker)
         if result:
+            print(f"Valid Data Found: {ticker} -> {result['status']}")
             stock_data.append(result)
-        time.sleep(1)
+            
+        # Fast sleep to process 12,000+ tickers efficiently
+        time.sleep(0.5)
 
     with open('asia_data.json', 'w') as f:
         json.dump(stock_data, f, indent=4, cls=NumpyEncoder)
-    print(f"Data saved: {len(stock_data)} Asia stocks.")
+    print(f"Data saved: {len(stock_data)} Asian stocks.")
 
 if __name__ == "__main__":
     update_asia_stocks()
