@@ -1,76 +1,38 @@
 name: Global Halal Stock Data Updater
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
   schedule:
     - cron: '0 0 1 * *'
 
 jobs:
-  update-us:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-    - run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - run: python us_updater.py
-    - uses: actions/upload-artifact@v4
-      with:
-        name: us-data
-        path: us_data.json
-
-  update-eu:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-    - run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - run: python eu_updater.py
-    - uses: actions/upload-artifact@v4
-      with:
-        name: eu-data
-        path: eu_data.json
-
   update-asia:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-    - run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - run: python asia_updater.py
-    - uses: actions/upload-artifact@v4
-      with:
-        name: asia-data
-        path: asia_data.json
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - run: python asia_updater.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: asia-data
+          path: asia_data.json
 
   commit-and-push:
-    needs: [update-us, update-eu, update-asia]
+    needs: [update-asia]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/download-artifact@v4
-      with:
-        name: us-data
-    - uses: actions/download-artifact@v4
-      with:
-        name: eu-data
-    - uses: actions/download-artifact@v4
-      with:
-        name: asia-data
-    - run: |
-        git config --local user.name "github-actions[bot]"
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git add us_data.json eu_data.json asia_data.json
-        git commit -m "Auto-update Global Shariah stock data (US, EU, Asia)" || echo "No changes to commit"
-        git push
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: asia-data
+      - run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add asia_data.json
+          git commit -m "Auto-update Asian Shariah stock data" || echo "No changes to commit"
+          git push
