@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  update-us:
+  update-us-1:
     runs-on: ubuntu-latest
     timeout-minutes: 350
     steps:
@@ -21,11 +21,28 @@ jobs:
     - run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - run: python us_updater.py
+    - run: python us_updater_1.py
     - uses: actions/upload-artifact@v4
       with:
-        name: us-data
-        path: us_data.json
+        name: us-data-1
+        path: us_data_1.json
+
+  update-us-2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - run: python us_updater_2.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: us-data-2
+        path: us_data_2.json
 
   update-eu:
     runs-on: ubuntu-latest
@@ -62,23 +79,54 @@ jobs:
         path: asia_data.json
 
   commit-and-push:
-    needs: [update-us, update-eu, update-asia]
+    if: always()
+    needs: [update-us-1, update-us-2, update-eu, update-asia]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    
     - uses: actions/download-artifact@v4
+      continue-on-error: true
       with:
-        name: us-data
+        name: us-data-1
         path: .
+        
     - uses: actions/download-artifact@v4
+      continue-on-error: true
+      with:
+        name: us-data-2
+        path: .
+        
+    - uses: actions/download-artifact@v4
+      continue-on-error: true
       with:
         name: eu-data
         path: .
+        
     - uses: actions/download-artifact@v4
+      continue-on-error: true
       with:
         name: asia-data
         path: .
-    - run: |
+
+    - name: Merge US Data Files
+      run: |
+        python -c "
+        import json, os
+        data = []
+        if os.path.exists('us_data_1.json'):
+            with open('us_data_1.json', 'r') as f:
+                data.extend(json.load(f))
+        if os.path.exists('us_data_2.json'):
+            with open('us_data_2.json', 'r') as f:
+                data.extend(json.load(f))
+        if data:
+            with open('us_data.json', 'w') as f:
+                json.dump(data, f, indent=4)
+        "
+
+    - name: Commit and Push
+      run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git add us_data.json eu_data.json asia_data.json
