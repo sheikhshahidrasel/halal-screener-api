@@ -3,11 +3,11 @@ import time
 import requests
 
 def get_top_crypto_ids():
-    print("Fetching crypto page 21 to 40 (Next 5000) from CoinGecko...")
+    print("Fetching crypto page 9 to 16 (Coins 2001 to 4000) from CoinGecko...")
     coin_ids = []
     headers = {'User-Agent': 'HalalScreenerApp (contact@example.com)'}
     
-    for page in range(21, 41): # Page 21 to 40
+    for page in range(9, 17): # Page 9 to 16
         url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page={page}&sparkline=false"
         try:
             response = requests.get(url, headers=headers)
@@ -25,7 +25,6 @@ def get_top_crypto_ids():
             pass
     return coin_ids
 
-# (Analyze function is exactly the same as updater 1)
 def analyze_crypto_compliance(coin_id, name, symbol):
     headers = {'User-Agent': 'HalalScreenerApp (contact@example.com)'}
     url = f"https://api.coingecko.com/api/v3/coins/{coin_id}?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false"
