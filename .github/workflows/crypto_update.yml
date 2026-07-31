@@ -24,7 +24,7 @@ jobs:
         name: crypto-data-1
         path: crypto_data_1.json
 
-  # Robot 2 (Runs at the same time as Robot 1)
+  # Robot 2
   crypto-part-2:
     runs-on: ubuntu-latest
     steps:
@@ -39,9 +39,54 @@ jobs:
         name: crypto-data-2
         path: crypto_data_2.json
 
-  # Merge Robot (Waits for Robot 1 & 2 to finish)
+  # Robot 3
+  crypto-part-3:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: pip install requests
+    - run: python crypto_updater_3.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: crypto-data-3
+        path: crypto_data_3.json
+
+  # Robot 4
+  crypto-part-4:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: pip install requests
+    - run: python crypto_updater_4.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: crypto-data-4
+        path: crypto_data_4.json
+
+  # Robot 5
+  crypto-part-5:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: pip install requests
+    - run: python crypto_updater_5.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: crypto-data-5
+        path: crypto_data_5.json
+
+  # Merge Robot (Waits for all 5 Robots to finish)
   merge-crypto:
-    needs: [crypto-part-1, crypto-part-2]
+    needs: [crypto-part-1, crypto-part-2, crypto-part-3, crypto-part-4, crypto-part-5]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -55,6 +100,15 @@ jobs:
     - uses: actions/download-artifact@v4
       with:
         name: crypto-data-2
+    - uses: actions/download-artifact@v4
+      with:
+        name: crypto-data-3
+    - uses: actions/download-artifact@v4
+      with:
+        name: crypto-data-4
+    - uses: actions/download-artifact@v4
+      with:
+        name: crypto-data-5
         
     - name: Merge Data
       run: python merge_crypto.py
