@@ -3,11 +3,11 @@ import time
 import requests
 
 def get_top_crypto_ids():
-    print("Fetching crypto page 1 to 20 (Top 5000) from CoinGecko...")
+    print("Fetching crypto page 1 to 8 (Coins 1 to 2000) from CoinGecko...")
     coin_ids = []
     headers = {'User-Agent': 'HalalScreenerApp (contact@example.com)'}
     
-    for page in range(1, 21): # Page 1 to 20
+    for page in range(1, 9): # Page 1 to 8
         url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page={page}&sparkline=false"
         try:
             response = requests.get(url, headers=headers)
