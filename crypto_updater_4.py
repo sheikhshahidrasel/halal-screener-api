@@ -20,7 +20,7 @@ def get_top_crypto_ids():
             elif response.status_code == 429:
                 time.sleep(60)
                 continue
-            time.sleep(3) 
+            time.sleep(10) 
         except Exception as e:
             pass
     return coin_ids
@@ -33,7 +33,7 @@ def analyze_crypto_compliance(coin_id, name, symbol):
         try:
             response = requests.get(url, headers=headers)
             if response.status_code == 429:
-                time.sleep(15)
+                time.sleep(60)
                 continue
             if response.status_code != 200:
                 return None
@@ -90,7 +90,7 @@ def update_crypto_data():
         result = analyze_crypto_compliance(coin['id'], coin['name'], coin['symbol'])
         if result:
             crypto_data.append(result)
-        time.sleep(2)
+        time.sleep(6)
 
     with open('crypto_data_4.json', 'w') as f:
         json.dump(crypto_data, f, indent=4)
