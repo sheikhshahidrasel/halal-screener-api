@@ -311,7 +311,7 @@ def update_asia_stocks():
             stock_data.append(result)
             
         # Maintained original Anti-ban sleep timing
-        time.sleep(random.uniform(3.0, 5.0))
+        time.sleep(random.uniform(1.0, 2.5))
 
     with open('asia_data.json', 'w') as f:
         json.dump(stock_data, f, indent=4, cls=NumpyEncoder)
