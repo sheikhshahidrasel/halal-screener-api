@@ -28,6 +28,7 @@ jobs:
         path: us_data_1.json
 
   update-us-2:
+    needs: update-us-1
     runs-on: ubuntu-latest
     timeout-minutes: 350
     steps:
@@ -45,6 +46,7 @@ jobs:
         path: us_data_2.json
 
   update-eu:
+    needs: update-us-2
     runs-on: ubuntu-latest
     timeout-minutes: 350
     steps:
@@ -62,6 +64,7 @@ jobs:
         path: eu_data.json
 
   update-asia:
+    needs: update-eu
     runs-on: ubuntu-latest
     timeout-minutes: 350
     steps:
