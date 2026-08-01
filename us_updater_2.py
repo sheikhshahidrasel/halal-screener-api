@@ -261,7 +261,7 @@ def update_us_stocks_part_2():
             stock_data.append(result)
         
         # Anti-ban randomized sleep
-        time.sleep(random.uniform(3.0, 5.0))
+        time.sleep(random.uniform(1.0, 2.5))
 
     # Save to the distinct JSON file for Part 2
     with open('us_data_2.json', 'w') as f:
