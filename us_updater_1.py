@@ -261,7 +261,7 @@ def update_us_stocks_part_1():
             stock_data.append(result)
         
         # Anti-ban randomized sleep (Kept exactly as requested)
-        time.sleep(random.uniform(3.0, 5.0))
+        time.sleep(random.uniform(1.0, 2.5))
 
     # Save highly structured JSON
     with open('us_data_1.json', 'w') as f:
