@@ -45,34 +45,56 @@ DOUBTFUL_INDUSTRIES = [
     'capital markets', 'financial data & stock exchanges', 'credit services'
 ]
 
+def fetch_wiki_tickers(session, url, suffix):
+    tickers = []
+    try:
+        headers = {'User-Agent': 'PremiumShariahScreener (contact@example.com)'}
+        response = session.get(url, headers=headers, timeout=15)
+        tables = pd.read_html(response.text)
+        
+        for df in tables:
+            target_col = None
+            for col in df.columns:
+                if any(keyword in str(col).upper() for keyword in ['TICKER', 'SYMBOL', 'CODE']):
+                    target_col = col
+                    break
+            
+            if target_col:
+                for val in df[target_col].dropna().astype(str):
+                    clean_val = str(val).split()[0].replace('.', '')
+                    if 1 <= len(clean_val) <= 6 and clean_val.upper() != 'SYMBOL':
+                        tickers.append(f"{clean_val}.{suffix}")
+                break
+    except Exception as e:
+        print(f"Skipping Wiki fetch for {suffix}: {e}")
+    return tickers
+
 def get_germany_tickers():
     germany_tickers = set()
+    session = get_robust_session()
+
+    # Fetch Major German Indices via Wikipedia Automatically
+    wiki_sources = [
+        ("https://en.wikipedia.org/wiki/DAX", "DE"),
+        ("https://en.wikipedia.org/wiki/MDAX", "DE"),
+        ("https://en.wikipedia.org/wiki/SDAX", "DE"),
+        ("https://en.wikipedia.org/wiki/TecDAX", "DE"),
+        ("https://en.wikipedia.org/wiki/CDAX", "DE") # CDAX covers the broader German market
+    ]
     
-    # Reading exactly from your own safe CSV file uploaded to GitHub
-    try:
-        print("Fetching official Germany (XETRA) stock list from local CSV...")
-        # Make sure you upload a file named 'germany_tickers.csv' to your repository
-        df = pd.read_csv('germany_tickers.csv', on_bad_lines='skip')
-        
-        col = 'Symbol' if 'Symbol' in df.columns else df.columns[0]
-        for ticker in df[col].dropna().astype(str):
-            clean_ticker = ticker.strip()
-            if clean_ticker and clean_ticker.upper() != 'SYMBOL':
-                # Yahoo Finance needs '.DE' suffix for German Stocks (Deutsche Börse / XETRA)
-                if not clean_ticker.endswith(".DE"):
-                     germany_tickers.add(f"{clean_ticker}.DE")
-                else:
-                     germany_tickers.add(clean_ticker)
-        print(f"Successfully loaded {len(germany_tickers)} German tickers from CSV.")
-    except Exception as e:
-        print(f"Error fetching Germany tickers: {e}")
-        print("CRITICAL: Please ensure 'germany_tickers.csv' is uploaded in your GitHub repository!")
+    print("Fetching official Germany (XETRA) stock list automatically...")
+    for url, suffix in wiki_sources:
+        fetched = fetch_wiki_tickers(session, url, suffix)
+        germany_tickers.update(fetched)
+        print(f"Loaded {len(fetched)} tickers from index source.")
+        time.sleep(2)
 
     final_tickers = list(germany_tickers)
+    print(f"Successfully compiled a total of {len(final_tickers)} unique Germany tickers.")
     
-    # Fallback just in case the CSV is missing or empty
+    # Fallback in case Wikipedia structure changes or network fails
     if len(final_tickers) < 5:
-         return ["SAP.DE", "SIE.DE", "ALV.DE", "BMW.DE", "MBG.DE", "VOW3.DE"]
+         return ["SAP.DE", "SIE.DE", "ALV.DE", "BMW.DE", "MBG.DE"]
     
     return final_tickers
 
