@@ -44,7 +44,7 @@ jobs:
         name: us-data-2
         path: us_data_2.json
 
-  update-eu:
+  update-uk:
     runs-on: ubuntu-latest
     timeout-minutes: 350
     steps:
@@ -55,11 +55,130 @@ jobs:
     - run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - run: python eu_updater.py
+    - run: python uk_updater.py
     - uses: actions/upload-artifact@v4
       with:
-        name: eu-data
-        path: eu_data.json
+        name: uk-data
+        path: uk_data.json
+
+  update-germany:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - run: python germany_updater.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: germany-data
+        path: germany_data.json
+
+  update-france:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - run: python france_updater.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: france-data
+        path: france_data.json
+
+  update-netherlands:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - run: python netherlands_updater.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: netherlands-data
+        path: netherlands_data.json
+
+  update-switzerland:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - run: python switzerland_updater.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: switzerland-data
+        path: switzerland_data.json
+
+  update-italy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - run: python italy_updater.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: italy-data
+        path: italy_data.json
+
+  update-spain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - run: python spain_updater.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: spain-data
+        path: spain_data.json
+
+  update-canada:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - run: python canada_updater.py
+    - uses: actions/upload-artifact@v4
+      with:
+        name: canada-data
+        path: canada_data.json
 
   update-asia:
     runs-on: ubuntu-latest
@@ -80,7 +199,7 @@ jobs:
 
   commit-and-push:
     if: always()
-    needs: [update-us-1, update-us-2, update-eu, update-asia]
+    needs: [update-us-1, update-us-2, update-uk, update-germany, update-france, update-netherlands, update-switzerland, update-italy, update-spain, update-canada, update-asia]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -100,9 +219,51 @@ jobs:
     - uses: actions/download-artifact@v4
       continue-on-error: true
       with:
-        name: eu-data
+        name: uk-data
         path: .
         
+    - uses: actions/download-artifact@v4
+      continue-on-error: true
+      with:
+        name: germany-data
+        path: .
+        
+    - uses: actions/download-artifact@v4
+      continue-on-error: true
+      with:
+        name: france-data
+        path: .
+        
+    - uses: actions/download-artifact@v4
+      continue-on-error: true
+      with:
+        name: netherlands-data
+        path: .
+        
+    - uses: actions/download-artifact@v4
+      continue-on-error: true
+      with:
+        name: switzerland-data
+        path: .
+        
+    - uses: actions/download-artifact@v4
+      continue-on-error: true
+      with:
+        name: italy-data
+        path: .
+        
+    - uses: actions/download-artifact@v4
+      continue-on-error: true
+      with:
+        name: spain-data
+        path: .
+        
+    - uses: actions/download-artifact@v4
+      continue-on-error: true
+      with:
+        name: canada-data
+        path: .
+
     - uses: actions/download-artifact@v4
       continue-on-error: true
       with:
@@ -125,10 +286,29 @@ jobs:
                 json.dump(data, f, indent=4)
         "
 
+    - name: Merge EU Data Files
+      run: |
+        python -c "
+        import json, os
+        data = []
+        eu_files = [
+            'uk_data.json', 'germany_data.json', 'france_data.json', 
+            'netherlands_data.json', 'switzerland_data.json', 
+            'italy_data.json', 'spain_data.json'
+        ]
+        for file in eu_files:
+            if os.path.exists(file):
+                with open(file, 'r') as f:
+                    data.extend(json.load(f))
+        if data:
+            with open('eu_data.json', 'w') as f:
+                json.dump(data, f, indent=4)
+        "
+
     - name: Commit and Push
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git add us_data.json eu_data.json asia_data.json
-        git commit -m "Auto-update Global Shariah stock data (US, EU, Asia)" || echo "No changes to commit"
+        git add us_data.json eu_data.json asia_data.json canada_data.json
+        git commit -m "Auto-update Global Shariah stock data (US, EU, Asia, Canada)" || echo "No changes to commit"
         git push
