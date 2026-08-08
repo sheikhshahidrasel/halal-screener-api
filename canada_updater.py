@@ -45,51 +45,51 @@ DOUBTFUL_INDUSTRIES = [
     'capital markets', 'financial data & stock exchanges', 'credit services'
 ]
 
-def fetch_wiki_tickers(session, url, suffix):
-    tickers = []
-    try:
-        headers = {'User-Agent': 'PremiumShariahScreener (contact@example.com)'}
-        response = session.get(url, headers=headers, timeout=15)
-        tables = pd.read_html(response.text)
-        
-        for df in tables:
-            target_col = None
-            for col in df.columns:
-                if any(keyword in str(col).upper() for keyword in ['TICKER', 'SYMBOL', 'CODE']):
-                    target_col = col
-                    break
-            
-            if target_col:
-                for val in df[target_col].dropna().astype(str):
-                    clean_val = str(val).split()[0].replace('.', '')
-                    if 1 <= len(clean_val) <= 6 and clean_val.upper() != 'SYMBOL':
-                        tickers.append(f"{clean_val}.{suffix}")
-                break
-    except Exception as e:
-        print(f"Skipping Wiki fetch for {suffix}: {e}")
-    return tickers
-
 def get_canada_tickers():
     canada_tickers = set()
     session = get_robust_session()
 
-    # Fetch Major Canada Indices via Wikipedia Automatically (Toronto Stock Exchange)
-    wiki_sources = [
-        ("https://en.wikipedia.org/wiki/S%26P/TSX_Composite_Index", "TO"),
-        ("https://en.wikipedia.org/wiki/S%26P/TSX_60", "TO")
-    ]
+    print("Fetching official Canada stock list automatically from TradingView Live Scanner...")
     
-    print("Fetching official Canada (TSX) stock list automatically...")
-    for url, suffix in wiki_sources:
-        fetched = fetch_wiki_tickers(session, url, suffix)
-        canada_tickers.update(fetched)
-        print(f"Loaded {len(fetched)} tickers from index source.")
-        time.sleep(2)
+    # TradingView Live Scanner API Endpoint for Canada
+    url = "https://scanner.tradingview.com/canada/scan"
+    
+    # Payload to fetch up to 5000 stocks (100% full market coverage)
+    payload = {
+        "filter": [{"left": "type", "operation": "in_range", "right": ["stock", "dr", "fund"]}],
+        "options": {"lang": "en"},
+        "markets": ["canada"],
+        "symbols": {"query": {"types": []}, "tickers": []},
+        "columns": ["name"],
+        "sort": {"sortBy": "name", "sortOrder": "asc"},
+        "range": [0, 5000]
+    }
+    
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Content-Type": "application/json"
+    }
+
+    try:
+        response = session.post(url, json=payload, headers=headers, timeout=15)
+        if response.status_code == 200:
+            data = response.json()
+            for item in data.get("data", []):
+                ticker = item["d"][0]
+                # Yahoo Finance uses .TO for Canadian Stocks (Toronto Stock Exchange)
+                if not ticker.endswith('.TO'):
+                     canada_tickers.add(f"{ticker}.TO")
+                else:
+                     canada_tickers.add(ticker)
+            print(f"Successfully loaded {len(canada_tickers)} Canada tickers from TradingView API.")
+        else:
+            print(f"TradingView API returned status code {response.status_code}")
+    except Exception as e:
+        print(f"Error fetching Canada tickers from TradingView: {e}")
 
     final_tickers = list(canada_tickers)
-    print(f"Successfully compiled a total of {len(final_tickers)} unique Canada tickers.")
     
-    # Fallback in case Wikipedia structure changes or network fails
+    # Fallback in case API fails
     if len(final_tickers) < 5:
          return ["RY.TO", "TD.TO", "SHOP.TO", "ENB.TO", "CNR.TO"]
     
